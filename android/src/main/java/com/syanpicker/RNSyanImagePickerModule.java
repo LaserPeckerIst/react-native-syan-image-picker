@@ -174,7 +174,7 @@ public class RNSyanImagePickerModule extends ReactContextBaseJavaModule {
             modeValue = 2;
         }
 
-        Boolean isAndroidQ = SdkVersionUtils.checkedAndroid_Q();
+        boolean isAndroidQ = SdkVersionUtils.isQ();
 
         Activity currentActivity = getCurrentActivity();
         PictureSelector.create(currentActivity)
@@ -190,10 +190,10 @@ public class RNSyanImagePickerModule extends ReactContextBaseJavaModule {
                 .isCamera(isCamera)// 是否显示拍照按钮 true or false
                 .imageFormat(isAndroidQ ? PictureMimeType.PNG_Q : PictureMimeType.PNG)// 拍照保存图片格式后缀,默认jpeg
                 .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
-                .sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
+                //.sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
                 .enableCrop(isCrop)// 是否裁剪 true or false
                 .compress(compress)// 是否压缩 true or false
-                .glideOverride(160, 160)// int glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                //.glideOverride(160, 160)// int glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
                 .withAspectRatio(CropW, CropH)// int 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
                 .hideBottomControls(isCrop)// 是否显示uCrop工具栏，默认不显示 true or false
                 .isGif(isGif)// 是否显示gif图片 true or false
@@ -234,7 +234,7 @@ public class RNSyanImagePickerModule extends ReactContextBaseJavaModule {
         boolean showSelectedIndex = this.cameraOptions.getBoolean("showSelectedIndex");
         boolean compressFocusAlpha = this.cameraOptions.getBoolean("compressFocusAlpha");
 
-        Boolean isAndroidQ = SdkVersionUtils.checkedAndroid_Q();
+        boolean isAndroidQ = SdkVersionUtils.isQ();
 
         Activity currentActivity = getCurrentActivity();
         PictureSelector.create(currentActivity)
@@ -243,7 +243,7 @@ public class RNSyanImagePickerModule extends ReactContextBaseJavaModule {
                 .imageFormat(isAndroidQ ? PictureMimeType.PNG_Q : PictureMimeType.PNG)// 拍照保存图片格式后缀,默认jpeg
                 .enableCrop(isCrop)// 是否裁剪 true or false
                 .compress(compress)// 是否压缩 true or false
-                .glideOverride(160, 160)// int glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                //.glideOverride(160, 160)// int glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
                 .withAspectRatio(CropW, CropH)// int 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
                 .hideBottomControls(isCrop)// 是否显示uCrop工具栏，默认不显示 true or false
                 .freeStyleCropEnabled(freeStyleCropEnabled)// 裁剪框是否可拖拽 true or false
@@ -356,8 +356,8 @@ public class RNSyanImagePickerModule extends ReactContextBaseJavaModule {
 
                 WritableMap videoMap = new WritableNativeMap();
 
-                Boolean isAndroidQ = SdkVersionUtils.checkedAndroid_Q();
-                Boolean isAndroidR = SdkVersionUtils.checkedAndroid_R();
+                boolean isAndroidQ = SdkVersionUtils.isQ();
+                boolean isAndroidR = SdkVersionUtils.isR();
                 String filePath = media.getPath();
                 if (isAndroidQ){
                    filePath = media.getAndroidQToPath();
