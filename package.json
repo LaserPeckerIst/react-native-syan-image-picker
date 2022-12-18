@@ -1,7 +1,15 @@
 {
-  "name": "react-native-syan-image-picker",
+  "name": "@laserpecker/react-native-syan-image-picker",
   "version": "0.5.3",
   "description": "React-Native 多图片选择 支持裁剪 压缩",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LaserPeckerIst/react-native-syan-image-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LaserPeckerIst/react-native-syan-image-picker/issues"
+  },
+  "homepage": "https://github.com/LaserPeckerIst/react-native-syan-image-picker#readme",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "source": "src/index",
@@ -28,7 +36,7 @@
     "TZImagePickerController",
     "Photo"
   ],
-  "author": "syan",
+  "author": "LaserPeckerIst",
   "license": "MIT",
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.1",
